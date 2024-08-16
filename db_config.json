@@ -1,0 +1,34 @@
+{
+    "databases": [
+        {
+            "name": "Remote Database 1",
+            "ip": "127.0.0.1",
+            "port": 5433,
+            "hostname": "remote-postgres",
+            "dbname": "remotedb",
+            "user": "remotedbuser",
+            "password": "remotedb123"
+        },
+
+	  {
+            "name": "Remote Database 2",
+            "ip": "127.0.0.1",
+            "port": 5434,
+            "hostname": "remote-postgres2",
+            "dbname": "remotedb2",
+            "user": "remotedbuser",
+            "password": "remotedb123"
+        },
+
+        {
+            "name": "Local Database",
+            "ip": "127.0.0.1",
+            "port": 5432,
+            "hostname": "local-postgres",
+            "dbname": "localdb",
+            "user": "localdbuser",
+            "password": "localdb123"
+        }
+    ]
+}
+

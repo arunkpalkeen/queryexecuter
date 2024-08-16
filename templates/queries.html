@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Queries</title>
+</head>
+<body>
+    <h1>Submitted Queries</h1>
+    <table border="1">
+        <tr>
+            <th>Query</th>
+            <th>Submitted By</th>
+            <th>Status</th>
+        </tr>
+        {{range .queries}}
+        <tr>
+            <td>{{.QueryText}}</td>
+            <td>{{.SubmittedBy}}</td>
+            <td>{{.Status}}</td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit SQL Query</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/static/logo.png" alt="Logo" style="width: 100px; height: auto;">
+            <h1>SQL Query Submission Form</h1>
+            <nav>
+                <a href="/">Home</a> | 
+                <a href="/logout">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form method="POST" action="/submit">
+            <label for="query_text">Query:</label>
+            <textarea id="query_text" name="query_text"></textarea><br>
+
+            <label for="submitted_by">Submitted By:</label>
+            <input type="text" id="submitted_by" name="submitted_by"><br>
+
+            <label for="approved_by">Approved By:</label>
+            <input type="text" id="approved_by" name="approved_by"><br>
+
+            <label for="selected_db">Select Database:</label>
+            <select id="selected_db" name="selected_db">
+                {{ range .databases }}
+                <option value="{{ .Name }}">{{ .Name }} ({{ .Hostname }}:{{ .IP }}:{{ .Port }}/{{ .DBName }})</option>
+                {{ end }}
+            </select><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="report-section">
+        <h2>Generate Report</h2>
+        <form method="POST" action="/generate-report">
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date"><br>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date"><br>
+            <input type="submit" value="Generate Report">
+        </form>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+</html>
